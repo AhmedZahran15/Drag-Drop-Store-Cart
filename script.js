@@ -31,7 +31,7 @@ function dropped(e) {
   e.target.classList.remove("dragOver");
   const productId = e.dataTransfer.getData("product-id");
   const source = e.dataTransfer.getData("source");
-  if (source === e.target.closest(`.items, .cartItems`).className) return;
+  if (e.target.closest(`.items, .cartItems`).classList.contains(source)) return;
   const product = products.find((product) => product.id === +productId);
   const cartProduct = cart.find((cartProduct) => cartProduct.id === +productId);
   if (source === "items") {
@@ -94,7 +94,7 @@ function renderItems(parentElement, products) {
     parentElement.appendChild(item);
   });
   if (
-    parentElement.className === "cartItems" &&
+    parentElement.classList.contains("cartItems") &&
     parentElement.innerHTML.trim() === ""
   ) {
     parentElement.innerHTML = "<h2>Drag items here to add them to cart</h2>";
