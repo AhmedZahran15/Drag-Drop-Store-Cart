@@ -31,6 +31,7 @@ function dropped(e) {
   e.target.classList.remove("dragOver");
   const productId = e.dataTransfer.getData("product-id");
   const source = e.dataTransfer.getData("source");
+  if (source === e.target.closest(`.items, .cartItems`).className) return;
   const product = products.find((product) => product.id === +productId);
   const cartProduct = cart.find((cartProduct) => cartProduct.id === +productId);
   if (source === "items") {
