@@ -58,12 +58,12 @@ function overDrag(e) {
   e.preventDefault();
 }
 function enterDrag(e) {
-  e.target.classList.add("dragOver");
   e.preventDefault();
+  e.target.closest(".items, .cartItems").classList.add("dragOver");
 }
 function leaveDrag(e) {
-  e.target.classList.remove("dragOver");
   e.preventDefault();
+  e.target.closest(".items, .cartItems").classList.remove("dragOver");
 }
 function CreateItem(product) {
   const item = document.createElement("div");
