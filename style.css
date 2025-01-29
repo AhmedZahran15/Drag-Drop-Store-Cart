@@ -21,8 +21,6 @@ body {
   background-color: var(--bg-color);
   padding: 50px;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 section {
   max-width: 50%;
@@ -105,7 +103,7 @@ h2 {
   flex-direction: column;
   gap: 20px;
   min-height: 400px;
-  top: 0;
+  top: 20px;
 }
 .cartHeader {
   width: 100%;
